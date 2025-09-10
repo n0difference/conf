@@ -9,7 +9,6 @@
   /* === Modules Order === */
   "modules-left": [
     "custom/archicon",
-    "clock",
     "cpu",
     "memory",
     "disk",
@@ -24,21 +23,14 @@
     "pulseaudio_slider",
     "pulseaudio",
     "network",
-    "hyprland/language"
+    "hyprland/language",
+    "clock"
   ],
   /* === Modules Left === */
   "custom/archicon": {
     "format": "",
     "on-click": "wofi --show drun",
     "tooltip": false
-  },
-  "clock": {
-    "timezone": "Europe/Moscow",
-    "format": "{:%H:%M  %d, %m}",
-    "tooltip-format": "{calendar}",
-    "calendar": {
-      "mode": "month"
-    }
   },
   "cpu": {
     "format": "{usage}% ",
@@ -125,5 +117,14 @@
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
     "ru": "RUS",
     "us": "ENG"
+  },
+  "clock": {
+    "timezone": "Europe/Moscow",
+    "format": "{:%H:%M  %d, %m}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
   }
+
 }
