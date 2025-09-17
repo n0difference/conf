@@ -36,6 +36,7 @@ window#waybar.hidden {
 
 /* Separation to the left */
 #custom-archicon,
+#battery,
 #cpu,
 #idle_inhibitor {
   margin-left: 5px;
@@ -44,6 +45,7 @@ window#waybar.hidden {
 }
 
 /* Separation to the rigth */
+#battery,
 #clock,
 #custom-archicon,
 #temperature {
@@ -60,10 +62,6 @@ window#waybar.hidden {
   color: #89B4FA;
   background: #161320;
   padding-right: 17px;
-}
-
-#clock {
-  background: #CBE993;
 }
 
 #cpu {
@@ -158,6 +156,10 @@ window#waybar.hidden {
 #language {
   background: #A6E3A1;
   padding-right: 15px;
+}
+
+#clock {
+  background: #CBE993;
 }
 
 /* === Optional animation === */

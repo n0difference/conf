@@ -24,7 +24,8 @@
     "pulseaudio",
     "network",
     "hyprland/language",
-    "clock"
+    "clock",
+    "battery"
   ],
   /* === Modules Left === */
   "custom/archicon": {
@@ -50,7 +51,7 @@
   "temperature": {
     "format": "{temperatureC}°C {icon}",
     "tooltip": true,
-    "tooltip-format": "Temperatura actual: {temperatureC}°C\nt > 80°C",
+    "tooltip-format": "Temperatura actual: {temperatureC}°C\nCritical > 80°C",
     "format-icons": [
       ""
     ]
@@ -60,11 +61,11 @@
     "format": "{id}"/*,
       "format-icons": {
       "default": "",
-      "active": ""*/
+      "active": ""
     },
     "persistent-workspaces": {
       "*": 2
-    },
+    }*/,
     "disable-scroll": true,
     "all-outputs": true,
     "show-special": true
@@ -120,11 +121,14 @@
   },
   "clock": {
     "timezone": "Europe/Moscow",
-    "format": "{:%H:%M  %d, %m}",
+    "format": "{:%H:%M - %d.%m}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month"
     }
+  },
+  "battery": {
+    "format": "{capacity}% {icon}"
   }
 
 }
