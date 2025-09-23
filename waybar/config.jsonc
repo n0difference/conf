@@ -121,7 +121,7 @@
   },
   "clock": {
     "timezone": "Europe/Moscow",
-    "format": "{:%H:%M - %d.%m}",
+    "format": "{:%H:%M | %d.%m}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month"
