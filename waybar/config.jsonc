@@ -1,3 +1,4 @@
+cat ./.config/waybar/config.jsonc 
 {
   "layer": "top",
   "position": "top",
@@ -29,8 +30,8 @@
   ],
   /* === Modules Left === */
   "custom/archicon": {
-    "format": "",
-    "on-click": "wofi --show drun",
+    "format": "∅",
+    "on-click": "rofi -show drun",
     "tooltip": false
   },
   "cpu": {
@@ -97,6 +98,7 @@
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-muted": " {format_source}",
+    "on-click": "pavucontrol",
     "format-icons": {
       "default": [
         "",
@@ -121,7 +123,7 @@
   },
   "clock": {
     "timezone": "Europe/Moscow",
-    "format": "{:%H:%M | %d.%m}",
+    "format": "{:%d.%m | %H:%M}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month"
