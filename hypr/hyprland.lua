@@ -213,13 +213,13 @@ hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Resize left (shrink width)
-hl.bind(mainMod .. " + CTRL + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
 -- Resize down (increase height)
-hl.bind(mainMod .. " + CTRL + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
+hl.bind(mainMod .. " + CTRL + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 -- Resize up (decrease height)
-hl.bind(mainMod .. " + CTRL + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
+hl.bind(mainMod .. " + CTRL + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
 -- Resize right (increase width)
-hl.bind(mainMod .. " + CTRL + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
