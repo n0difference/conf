@@ -63,7 +63,7 @@ hl.config({
         rounding = 7,
         rounding_power = 2,
         -- Change transparency of focused and unfocused windows
-        active_opacity = 1.0,
+        active_opacity = 0.97,
         inactive_opacity = 0.7,
         shadow = {
             enabled = false,
@@ -212,13 +212,16 @@ hl.bind(mainMod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Resize left (shrink width)
+-- move windows
+hl.bind(mainMod .. " + " .. "SHIFT + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + " .. "SHIFT + J", hl.dsp.window.swap({ direction = "down" }))
+hl.bind(mainMod .. " + " .. "SHIFT + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + " .. "SHIFT + L", hl.dsp.window.swap({ direction = "right" }))
+
+-- Resize windows
 hl.bind(mainMod .. " + CTRL + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
--- Resize down (increase height)
 hl.bind(mainMod .. " + CTRL + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
--- Resize up (decrease height)
 hl.bind(mainMod .. " + CTRL + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
--- Resize right (increase width)
 hl.bind(mainMod .. " + CTRL + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
@@ -291,3 +294,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("xdg-desktop-portal-hyprland")
     hl.exec_cmd("systemctl --user start plasma-polkit-agent")
 end)
+
+exec_once = {
+  "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland"
+}
+
